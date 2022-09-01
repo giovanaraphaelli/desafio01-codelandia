@@ -5,6 +5,7 @@ import axios from 'axios';
 import Container from './components/Container';
 import Card from './components/Card';
 import Loading from './components/Loading';
+import Footer from './components/Footer';
 
 function App() {
   const [posts, setPosts] = useState([]);
@@ -43,6 +44,7 @@ function App() {
           })
         )}
       </Container>
+      <Footer />
     </>
   );
 }

@@ -9,6 +9,7 @@ const CardWrapper = styled.div`
   background-color: #fff;
   padding: 1.5rem;
   border-radius: 5px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 
   h2 {
     color: #1a202c;

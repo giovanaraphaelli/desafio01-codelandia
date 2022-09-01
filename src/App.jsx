@@ -37,6 +37,7 @@ function App() {
                 date={post.date}
                 title={post.title}
                 content={post.content}
+                url={post.readMoreUrl}
               />
             );
           })

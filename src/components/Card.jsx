@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { FaRegHeart } from 'react-icons/fa';
+import { FaRegHeart, FaArrowRight } from 'react-icons/fa';
 
 const CardWrapper = styled.div`
   width: 100%;
@@ -27,6 +27,19 @@ const CardWrapper = styled.div`
     p {
       font-size: 0.875rem;
       line-height: 1.625rem;
+    }
+  }
+`;
+
+const SeeMore = styled.div`
+  display: flex;
+  align-items: center;
+  a {
+    color: #574ae8;
+    margin-right: 0.2rem;
+    transition: 0.4s;
+    &:hover {
+      margin-right: 0.5rem;
     }
   }
 `;
@@ -64,6 +77,12 @@ export default function Card(props) {
       </div>
       <h2>{props.title}</h2>
       <p>{props.content}</p>
+      <SeeMore>
+        <a href={props.url} target="_blank">
+          Read More
+        </a>
+        <FaArrowRight style={{ color: '#574AE8' }} />
+      </SeeMore>
     </CardWrapper>
   );
 }

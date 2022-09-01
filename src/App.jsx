@@ -1,7 +1,9 @@
 import GlobalStyle from './GlobalStyles';
-import Header from './components/Header';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import Header from './components/Header';
 import Container from './components/Container';
 import Card from './components/Card';
 import Loading from './components/Loading';
@@ -23,6 +25,10 @@ function App() {
       });
   }, []);
 
+  useEffect(() => {
+    AOS.init({ duration: 800 });
+  }, []);
+
   return (
     <>
       <GlobalStyle />
@@ -33,13 +39,15 @@ function App() {
         ) : (
           posts.map((post) => {
             return (
-              <Card
-                key={post.id}
-                date={post.date}
-                title={post.title}
-                content={post.content}
-                url={post.readMoreUrl}
-              />
+              <div data-aos="fade-right">
+                <Card
+                  key={post.id}
+                  date={post.date}
+                  title={post.title}
+                  content={post.content}
+                  url={post.readMoreUrl}
+                />
+              </div>
             );
           })
         )}

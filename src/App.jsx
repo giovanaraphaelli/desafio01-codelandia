@@ -39,9 +39,8 @@ function App() {
         ) : (
           posts.map((post) => {
             return (
-              <div data-aos="fade-right">
+              <div data-aos="fade-right" key={post.id}>
                 <Card
-                  key={post.id}
                   date={post.date}
                   title={post.title}
                   content={post.content}
